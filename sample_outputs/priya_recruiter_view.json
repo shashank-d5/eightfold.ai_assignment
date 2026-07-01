@@ -1,0 +1,38 @@
+{
+  "full_name": "Priya Sharma",
+  "primary_email": "priya.sharma@email.com",
+  "phone": "+919876543210",
+  "location": {
+    "city": "Hyderabad",
+    "region": "Telangana",
+    "country": "IN"
+  },
+  "headline": "Passionate full-stack developer with experience in cloud-native applications.",
+  "skill_names": [
+    "Python",
+    "Java",
+    "React",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "SQL",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Spring Boot",
+    "MySQL",
+    "MongoDB",
+    "Redis",
+    "Kubernetes",
+    "LangChain",
+    "RAG",
+    "Streamlit",
+    "Git",
+    "CI/CD",
+    "Rest Apis",
+    "GraphQL",
+    "FastAPI",
+    "Flask"
+  ],
+  "overall_confidence": 0.929
+}

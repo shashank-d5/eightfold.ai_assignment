@@ -1,0 +1,299 @@
+{
+  "candidate_id": "8c3b3b8f-8f5c-59de-9543-86791b9588bf",
+  "full_name": "Priya Sharma",
+  "emails": [
+    "priya.sharma@email.com",
+    "p.sharma@email.com"
+  ],
+  "phones": [
+    "+919876543210"
+  ],
+  "location": {
+    "city": "Hyderabad",
+    "region": "Telangana",
+    "country": "IN"
+  },
+  "links": {
+    "linkedin": "https://linkedin.com/in/priya-sharma",
+    "github": "https://github.com/priyasharma",
+    "portfolio": null,
+    "other": []
+  },
+  "headline": "Passionate full-stack developer with experience in cloud-native applications.",
+  "years_experience": 3.0,
+  "skills": [
+    {
+      "name": "Python",
+      "confidence": 0.912,
+      "sources": [
+        "recruiter_csv_row_0",
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "Java",
+      "confidence": 0.912,
+      "sources": [
+        "recruiter_csv_row_0",
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "React",
+      "confidence": 0.912,
+      "sources": [
+        "recruiter_csv_row_0",
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "confidence": 0.775,
+      "sources": [
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "AWS",
+      "confidence": 0.775,
+      "sources": [
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "Docker",
+      "confidence": 0.775,
+      "sources": [
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf",
+        "ats_json_0"
+      ]
+    },
+    {
+      "name": "SQL",
+      "confidence": 0.656,
+      "sources": [
+        "recruiter_csv_row_0",
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "confidence": 0.612,
+      "sources": [
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "REST APIs",
+      "confidence": 0.612,
+      "sources": [
+        "recruiter_notes:recruiter_notes_priya.txt",
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "MySQL",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Redis",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "LangChain",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "RAG",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Streamlit",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Git",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "GraphQL",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "FastAPI",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    },
+    {
+      "name": "Flask",
+      "confidence": 0.487,
+      "sources": [
+        "resume_pdf:sample_resume_priya.pdf"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Infosys",
+      "title": "Software Engineer",
+      "start": null,
+      "end": null,
+      "summary": " | Built microservices using Spring Boot and React. Reduced API latency by 40%."
+    },
+    {
+      "company": "StartupXYZ",
+      "title": "Intern Software Developer",
+      "start": null,
+      "end": null,
+      "summary": "Developed REST APIs using Flask and PostgreSQL."
+    }
+  ],
+  "education": [
+    {
+      "institution": "BITS Pilani",
+      "degree": "B.E.",
+      "field": "Computer Science",
+      "end_year": 2022
+    }
+  ],
+  "provenance": [
+    {
+      "field": "emails",
+      "source": "recruiter_csv_row_0",
+      "method": "direct"
+    },
+    {
+      "field": "emails",
+      "source": "ats_json_0",
+      "method": "direct"
+    },
+    {
+      "field": "phones",
+      "source": "recruiter_csv_row_0",
+      "method": "normalize_e164"
+    },
+    {
+      "field": "full_name",
+      "source": "ats_json_0",
+      "method": "direct"
+    },
+    {
+      "field": "headline",
+      "source": "ats_json_0",
+      "method": "direct"
+    },
+    {
+      "field": "location",
+      "source": "ats_json_0",
+      "method": "parse"
+    },
+    {
+      "field": "links.linkedin",
+      "source": "recruiter_csv_row_0",
+      "method": "direct"
+    },
+    {
+      "field": "links.github",
+      "source": "recruiter_csv_row_0",
+      "method": "direct"
+    },
+    {
+      "field": "years_experience",
+      "source": "ats_json_0",
+      "method": "direct"
+    },
+    {
+      "field": "skills",
+      "source": "recruiter_csv_row_0,recruiter_notes:recruiter_notes_priya.txt,resume_pdf:sample_resume_priya.pdf,ats_json_0",
+      "method": "canonicalize+merge"
+    },
+    {
+      "field": "experience",
+      "source": "recruiter_csv_row_0,recruiter_notes:recruiter_notes_priya.txt,resume_pdf:sample_resume_priya.pdf,ats_json_0",
+      "method": "granular_merge"
+    },
+    {
+      "field": "experience",
+      "source": "recruiter_csv_row_0,recruiter_notes:recruiter_notes_priya.txt,resume_pdf:sample_resume_priya.pdf,ats_json_0",
+      "method": "granular_merge"
+    }
+  ],
+  "overall_confidence": 0.912
+}

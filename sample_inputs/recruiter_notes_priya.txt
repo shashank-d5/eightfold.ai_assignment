@@ -1,0 +1,24 @@
+Recruiter Notes - Priya Sharma
+Date: 2024-01-15
+Recruiter: Sarah Thompson
+
+Candidate name: Priya Sharma
+Email: priya.sharma@email.com
+Phone: +91 98765 43210
+Location: Hyderabad, India
+
+Notes from screening call:
+- Strong Python and Java skills, has worked with React on frontend
+- Currently at Infosys as a Software Engineer, looking to switch
+- Interested in backend-heavy roles with Python or Java
+- Has experience with PostgreSQL, Docker, and some AWS
+- Open to relocation to Bangalore or remote roles
+- Asking for 18-22 LPA, currently at 12 LPA
+- Good communication, confident about system design basics
+- GitHub: github.com/priyasharma — has a few interesting projects
+- LinkedIn: linkedin.com/in/priya-sharma
+
+Key strengths: Python, REST APIs, microservices, Spring Boot
+Concerns: Limited experience with distributed systems at scale
+
+Follow-up: Send JD for Backend Engineer role at Client A (fintech).

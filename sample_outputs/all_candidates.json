@@ -1,0 +1,413 @@
+[
+  {
+    "candidate_id": "8c3b3b8f-8f5c-59de-9543-86791b9588bf",
+    "full_name": "Priya Sharma",
+    "emails": [
+      "priya.sharma@email.com",
+      "p.sharma@email.com"
+    ],
+    "phones": [
+      "+919876543210"
+    ],
+    "location": {
+      "city": "Hyderabad",
+      "region": "Telangana",
+      "country": "IN"
+    },
+    "links": {
+      "linkedin": "https://linkedin.com/in/priya-sharma",
+      "github": "https://github.com/priyasharma",
+      "portfolio": null,
+      "other": []
+    },
+    "headline": "Passionate full-stack developer with experience in cloud-native applications.",
+    "years_experience": 3.0,
+    "skills": [
+      {
+        "name": "Python",
+        "confidence": 0.962,
+        "sources": [
+          "recruiter_csv_row_0",
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "Java",
+        "confidence": 0.962,
+        "sources": [
+          "recruiter_csv_row_0",
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "React",
+        "confidence": 0.962,
+        "sources": [
+          "recruiter_csv_row_0",
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "Docker",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "AWS",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_0"
+        ]
+      },
+      {
+        "name": "SQL",
+        "confidence": 0.7,
+        "sources": [
+          "recruiter_csv_row_0"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Infosys",
+        "title": "Software Engineer",
+        "start": null,
+        "end": null,
+        "summary": " | Built microservices using Spring Boot and React. Reduced API latency by 40%."
+      },
+      {
+        "company": "StartupXYZ",
+        "title": "Intern Software Developer",
+        "start": null,
+        "end": null,
+        "summary": "Developed REST APIs using Flask and PostgreSQL."
+      }
+    ],
+    "education": [
+      {
+        "institution": "BITS Pilani",
+        "degree": "B.E.",
+        "field": "Computer Science",
+        "end_year": 2022
+      }
+    ],
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "recruiter_csv_row_0",
+        "method": "direct"
+      },
+      {
+        "field": "emails",
+        "source": "ats_json_0",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "recruiter_csv_row_0",
+        "method": "normalize_e164"
+      },
+      {
+        "field": "full_name",
+        "source": "ats_json_0",
+        "method": "direct"
+      },
+      {
+        "field": "headline",
+        "source": "ats_json_0",
+        "method": "direct"
+      },
+      {
+        "field": "location",
+        "source": "ats_json_0",
+        "method": "parse"
+      },
+      {
+        "field": "links.linkedin",
+        "source": "recruiter_csv_row_0",
+        "method": "direct"
+      },
+      {
+        "field": "links.github",
+        "source": "recruiter_csv_row_0",
+        "method": "direct"
+      },
+      {
+        "field": "years_experience",
+        "source": "ats_json_0",
+        "method": "direct"
+      },
+      {
+        "field": "skills",
+        "source": "recruiter_csv_row_0,ats_json_0",
+        "method": "canonicalize+merge"
+      },
+      {
+        "field": "experience",
+        "source": "recruiter_csv_row_0,ats_json_0",
+        "method": "granular_merge"
+      },
+      {
+        "field": "experience",
+        "source": "recruiter_csv_row_0,ats_json_0",
+        "method": "granular_merge"
+      }
+    ],
+    "overall_confidence": 0.962
+  },
+  {
+    "candidate_id": "cc723549-913e-52c0-8582-4ee01462cf92",
+    "full_name": "Jordan Lee",
+    "emails": [
+      "jlee@techcorp.io"
+    ],
+    "phones": [
+      "+12125550178"
+    ],
+    "location": {
+      "city": "New York",
+      "region": "NY",
+      "country": "US"
+    },
+    "links": null,
+    "headline": "ML engineer specializing in large-scale model training and deployment.",
+    "years_experience": 7.0,
+    "skills": [
+      {
+        "name": "PyTorch",
+        "confidence": 0.919,
+        "sources": [
+          "recruiter_csv_row_2",
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "TensorFlow",
+        "confidence": 0.919,
+        "sources": [
+          "recruiter_csv_row_2",
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "Python",
+        "confidence": 0.919,
+        "sources": [
+          "recruiter_csv_row_2",
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "LLMs",
+        "confidence": 0.919,
+        "sources": [
+          "recruiter_csv_row_2",
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "Kubernetes",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "Apache Spark",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_1"
+        ]
+      },
+      {
+        "name": "RAG",
+        "confidence": 0.725,
+        "sources": [
+          "ats_json_1"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Meta",
+        "title": "Senior ML Engineer",
+        "start": null,
+        "end": null,
+        "summary": null
+      },
+      {
+        "company": "Google",
+        "title": "Senior Research Scientist",
+        "start": null,
+        "end": null,
+        "summary": null
+      }
+    ],
+    "education": [
+      {
+        "institution": "MIT",
+        "degree": "Ph.D.",
+        "field": "Computer Science",
+        "end_year": 2017
+      }
+    ],
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "recruiter_csv_row_2",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "ats_json_1",
+        "method": "normalize_e164"
+      },
+      {
+        "field": "full_name",
+        "source": "ats_json_1",
+        "method": "direct"
+      },
+      {
+        "field": "headline",
+        "source": "ats_json_1",
+        "method": "direct"
+      },
+      {
+        "field": "location",
+        "source": "ats_json_1",
+        "method": "parse"
+      },
+      {
+        "field": "years_experience",
+        "source": "ats_json_1",
+        "method": "direct"
+      },
+      {
+        "field": "skills",
+        "source": "recruiter_csv_row_2,ats_json_1",
+        "method": "canonicalize+merge"
+      },
+      {
+        "field": "experience",
+        "source": "recruiter_csv_row_2,ats_json_1",
+        "method": "granular_merge"
+      },
+      {
+        "field": "experience",
+        "source": "recruiter_csv_row_2,ats_json_1",
+        "method": "granular_merge"
+      }
+    ],
+    "overall_confidence": 0.847
+  },
+  {
+    "candidate_id": "05981e9b-4057-5082-8e99-7495a157131a",
+    "full_name": "Alex Chen",
+    "emails": [
+      "alex.chen@gmail.com"
+    ],
+    "phones": [
+      "+14155550192"
+    ],
+    "location": {
+      "city": "San Francisco CA USA",
+      "region": null,
+      "country": null
+    },
+    "links": {
+      "linkedin": "https://linkedin.com/in/alexchen-dev",
+      "github": null,
+      "portfolio": null,
+      "other": []
+    },
+    "headline": null,
+    "years_experience": null,
+    "skills": [
+      {
+        "name": "Go",
+        "confidence": 0.9,
+        "sources": [
+          "recruiter_csv_row_1"
+        ]
+      },
+      {
+        "name": "Python",
+        "confidence": 0.9,
+        "sources": [
+          "recruiter_csv_row_1"
+        ]
+      },
+      {
+        "name": "Kubernetes",
+        "confidence": 0.9,
+        "sources": [
+          "recruiter_csv_row_1"
+        ]
+      },
+      {
+        "name": "PostgreSQL",
+        "confidence": 0.9,
+        "sources": [
+          "recruiter_csv_row_1"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "company": "Stripe",
+        "title": "Backend Engineer",
+        "start": null,
+        "end": null,
+        "summary": null
+      }
+    ],
+    "education": [],
+    "provenance": [
+      {
+        "field": "emails",
+        "source": "recruiter_csv_row_1",
+        "method": "direct"
+      },
+      {
+        "field": "phones",
+        "source": "recruiter_csv_row_1",
+        "method": "normalize_e164"
+      },
+      {
+        "field": "full_name",
+        "source": "recruiter_csv_row_1",
+        "method": "direct"
+      },
+      {
+        "field": "location",
+        "source": "recruiter_csv_row_1",
+        "method": "parse"
+      },
+      {
+        "field": "links.linkedin",
+        "source": "recruiter_csv_row_1",
+        "method": "direct"
+      },
+      {
+        "field": "skills",
+        "source": "recruiter_csv_row_1",
+        "method": "canonicalize+merge"
+      },
+      {
+        "field": "experience",
+        "source": "recruiter_csv_row_1",
+        "method": "granular_merge"
+      }
+    ],
+    "overall_confidence": 0.829
+  }
+]

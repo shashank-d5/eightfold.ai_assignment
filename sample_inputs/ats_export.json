@@ -1,0 +1,71 @@
+[
+  {
+    "applicantName": "Priya Sharma",
+    "contactEmail": "p.sharma@email.com",
+    "phone_number": "9876543210",
+    "currentRole": "Software Engineer II",
+    "currentCompany": "Infosys Limited",
+    "location": "Hyderabad, Telangana, IN",
+    "years_of_experience": 3,
+    "linkedin_url": "https://linkedin.com/in/priya-sharma",
+    "technicalSkills": ["Python", "Java", "React", "PostgreSQL", "Docker", "AWS"],
+    "professional_summary": "Passionate full-stack developer with experience in cloud-native applications.",
+    "work_history": [
+      {
+        "company": "Infosys",
+        "title": "Software Engineer",
+        "start_date": "2022-07",
+        "end_date": "present",
+        "description": "Built microservices using Spring Boot and React. Reduced API latency by 40%."
+      },
+      {
+        "company": "StartupXYZ",
+        "title": "Intern Software Developer",
+        "start_date": "2021-05",
+        "end_date": "2021-07",
+        "description": "Developed REST APIs using Flask and PostgreSQL."
+      }
+    ],
+    "education": [
+      {
+        "institution": "BITS Pilani",
+        "degree": "B.E.",
+        "major": "Computer Science",
+        "graduation_year": 2022
+      }
+    ]
+  },
+  {
+    "candidateName": "Jordan Lee",
+    "emailAddress": "jlee@techcorp.io",
+    "contactPhone": "+1-212-555-0178",
+    "jobTitle": "Staff ML Engineer",
+    "currentCompany": "Meta",
+    "location": "New York, NY, US",
+    "yearsExperience": 7,
+    "technicalSkills": ["PyTorch", "TensorFlow", "Python", "Kubernetes", "Spark", "LLMs", "RAG"],
+    "professionalSummary": "ML engineer specializing in large-scale model training and deployment.",
+    "workHistory": [
+      {
+        "employer": "Meta",
+        "role": "Staff ML Engineer",
+        "start": "2020-03",
+        "end": null
+      },
+      {
+        "employer": "Google",
+        "role": "Senior Research Scientist",
+        "start": "2017-08",
+        "end": "2020-02"
+      }
+    ],
+    "education": [
+      {
+        "school": "MIT",
+        "degree": "Ph.D.",
+        "field_of_study": "Computer Science",
+        "year": 2017
+      }
+    ]
+  }
+]

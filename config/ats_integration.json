@@ -1,0 +1,15 @@
+{
+  "_comment": "ATS integration export: strict required fields, provenance off, error on missing required",
+  "fields": [
+    {"path": "candidate_id",   "type": "string",   "required": true},
+    {"path": "full_name",      "type": "string",   "required": true},
+    {"path": "email",          "from": "emails[0]","type": "string",   "required": true},
+    {"path": "phone",          "from": "phones[0]","type": "string",   "normalize": "E164"},
+    {"path": "github_url",     "from": "links.github", "type": "string"},
+    {"path": "linkedin_url",   "from": "links.linkedin","type": "string"},
+    {"path": "top_skill",      "from": "skills[0].name","type": "string"}
+  ],
+  "include_confidence": false,
+  "include_provenance": false,
+  "on_missing": "null"
+}

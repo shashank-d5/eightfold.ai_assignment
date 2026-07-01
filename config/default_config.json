@@ -1,0 +1,6 @@
+{
+  "_comment": "Default config — all canonical fields, with provenance and confidence",
+  "include_confidence": true,
+  "include_provenance": true,
+  "on_missing": "null"
+}

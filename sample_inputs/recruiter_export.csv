@@ -1,0 +1,4 @@
+name,email,phone,current_company,title,location,linkedin,github,skills,headline
+Priya Sharma,priya.sharma@email.com,+91-9876543210,Infosys,Software Engineer,Hyderabad India,https://linkedin.com/in/priya-sharma,https://github.com/priyasharma,Python;Java;React;SQL,Full Stack Developer with 3 years experience
+Alex Chen,alex.chen@gmail.com,(415) 555-0192,Stripe,Backend Engineer,San Francisco CA USA,https://linkedin.com/in/alexchen-dev,,Go;Python;Kubernetes;PostgreSQL,
+Jordan Lee,jlee@techcorp.io,,Meta,Senior ML Engineer,New York NY US,,,PyTorch;TensorFlow;Python;LLMs,AI/ML specialist focused on LLMs
