@@ -1,6 +1,6 @@
 # Multi-Source Candidate Data Transformer
 
-**Eightfold Engineering Intern Assignment — Shashank Sripathi**
+**Eightfold Engineering Intern Assignment — Dasoju Shashank**
 
 ---
 
