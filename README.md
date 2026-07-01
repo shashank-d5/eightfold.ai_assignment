@@ -17,7 +17,7 @@ Ingests candidate data from multiple sources (Recruiter CSV, ATS JSON, Resume PD
 
 ---
 
-# 🚀 One-Command Demo
+#  One-Command Demo
 
 ```bash
 ./run_demo.sh
