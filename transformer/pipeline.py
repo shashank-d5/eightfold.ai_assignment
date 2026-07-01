@@ -33,9 +33,9 @@ from .project import project, load_config, validate_output
 from .schema import CanonicalProfile
 
 
-# ---------------------------------------------------------------------------
+ 
 # Source type detection
-# ---------------------------------------------------------------------------
+ 
 
 def _detect_source_type(source: str) -> str:
     """
@@ -60,9 +60,9 @@ def _detect_source_type(source: str) -> str:
     return "unknown"
 
 
-# ---------------------------------------------------------------------------
+ 
 # Pipeline runner
-# ---------------------------------------------------------------------------
+ 
 
 def run_pipeline(
     sources: list[str],
@@ -87,11 +87,11 @@ def run_pipeline(
     """
     t0 = time.perf_counter()
 
-    # --- Load config early (for source veto) ---
+    #    Load config early (for source veto)   
     config = load_config(config_path)
     ignored_sources = set(config.get("ignored_sources", [])) if config else set()
 
-    # --- Stage 1: Detect + Extract (with source veto) ---
+    #    Stage 1: Detect + Extract (with source veto)   
     all_records: list[dict] = []
     for src in sources:
         src = src.strip()
@@ -135,12 +135,12 @@ def run_pipeline(
     if verbose:
         print(f"  [extract] Total raw records: {len(all_records)}")
 
-    # --- Stage 2: Identity Clustering Layer ---
+    #    Stage 2: Identity Clustering Layer   
     clusters = group_records_by_identity(all_records)
     if verbose:
         print(f"  [identity] {len(all_records)} raw records → {len(clusters)} candidate cluster(s)")
 
-    # --- Stage 3: Merge each cluster ---
+    #    Stage 3: Merge each cluster   
     profiles = [merge_records(cluster) for cluster in clusters]
     
     # Sort by confidence (best first)
@@ -150,13 +150,13 @@ def run_pipeline(
         for i, p in enumerate(profiles):
             print(f"  [merge] Candidate {i+1}: {p.full_name or 'Unknown'} (conf: {p.overall_confidence:.3f})")
 
-    # --- Stage 4: Pick best profile for output ---
+    #    Stage 4: Pick best profile for output   
     best_profile = profiles[0] if profiles else CanonicalProfile(candidate_id=str(uuid.uuid4()))
 
-    # --- Stage 5: Project ---
+    #    Stage 5: Project   
     output = project(best_profile, config)
 
-    # --- Stage 6: Validate ---
+    #    Stage 6: Validate   
     errors = validate_output(output, config)
 
     elapsed_ms = int((time.perf_counter() - t0) * 1000)

@@ -23,9 +23,9 @@ from .normalize import (
 )
 
 
-# ---------------------------------------------------------------------------
+ 
 # Dynamic Source Quality (Replaces hardcoded weights)
-# ---------------------------------------------------------------------------
+ 
 
 def _calculate_source_quality(record: dict) -> float:
     """
@@ -48,9 +48,9 @@ def _calculate_source_quality(record: dict) -> float:
     return max(0.2, min(0.95, raw_score))
 
 
-# ---------------------------------------------------------------------------
+ 
 # Helpers
-# ---------------------------------------------------------------------------
+ 
 
 def _norm_name(name: Optional[str]) -> str:
     if not name:
@@ -192,9 +192,9 @@ def _parse_education(edu_list: Any) -> list[Education]:
     return result
 
 
-# ---------------------------------------------------------------------------
+ 
 # Main merge function
-# ---------------------------------------------------------------------------
+ 
 
 def merge_records(records: list[dict]) -> CanonicalProfile:
     """
@@ -209,10 +209,10 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
     provenance: list[ProvenanceEntry] = []
     confidence_scores: list[float] = []
 
-    # --- Compute source quality for each record ---
+    # Compute source quality for each record 
     source_qualities = {rec["_source_id"]: _calculate_source_quality(rec) for rec in records}
 
-    # ---- emails ----
+    #    emails   
     seen_emails: dict[str, str] = {}  # normalized -> source_id
     for rec in records:
         for raw_email in rec.get("emails", []):
@@ -224,7 +224,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
     for email, src in seen_emails.items():
         provenance.append(ProvenanceEntry(field="emails", source=src, method="direct"))
 
-    # ---- phones ----
+    #    phones   
     seen_phones: dict[str, str] = {}
     for rec in records:
         for raw_phone in rec.get("phones", []):
@@ -236,7 +236,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
     for phone, src in seen_phones.items():
         provenance.append(ProvenanceEntry(field="phones", source=src, method="normalize_e164"))
 
-    # ---- full_name: pick highest-quality source ----
+    #    full_name: pick highest-quality source   
     name_candidates: list[tuple[str, str, float]] = []
     for rec in records:
         if rec.get("full_name"):
@@ -248,7 +248,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
         provenance.append(ProvenanceEntry(field="full_name", source=best[1], method="direct"))
         confidence_scores.append(best[2])
 
-    # ---- headline ----
+    #    headline   
     headline_candidates = [(rec["headline"], rec["_source_id"], source_qualities[rec["_source_id"]])
                            for rec in records if rec.get("headline")]
     headline = None
@@ -257,7 +257,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
         headline = best[0]
         provenance.append(ProvenanceEntry(field="headline", source=best[1], method="direct"))
 
-    # ---- location ----
+    #    location   
     location = None
     for rec in sorted(records, key=lambda r: source_qualities[r["_source_id"]], reverse=True):
         raw_loc = rec.get("_raw_location")
@@ -266,7 +266,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
             provenance.append(ProvenanceEntry(field="location", source=rec["_source_id"], method="parse"))
             break
 
-    # ---- links ----
+    #    links   
     merged_links: dict[str, str] = {}
     for rec in records:
         lk = rec.get("links") or {}
@@ -276,7 +276,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
                 provenance.append(ProvenanceEntry(field=f"links.{key}", source=rec["_source_id"], method="direct"))
     links = Links(**{k: v for k, v in merged_links.items() if k in ("linkedin", "github", "portfolio")}) if merged_links else None
 
-    # ---- years_experience ----
+    #    years_experience   
     years_exp = None
     for rec in sorted(records, key=lambda r: source_qualities[r["_source_id"]], reverse=True):
         ye = rec.get("years_experience")
@@ -288,7 +288,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
             except (TypeError, ValueError):
                 pass
 
-    # ---- skills: union across sources, weighted by frequency ----
+    #    skills: union across sources, weighted by frequency   
     skill_sources: dict[str, list[str]] = defaultdict(list)
     for rec in records:
         raw_skills = rec.get("_raw_skills", [])
@@ -313,7 +313,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
             method="canonicalize+merge"
         ))
 
-    # ---- experience: GRANULAR MERGE ----
+    #    experience: GRANULAR MERGE   
     all_exp_lists = []
     for rec in records:
         raw_exp = rec.get("experience") or rec.get("_raw_experience", [])
@@ -329,7 +329,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
             method="granular_merge"
         ))
 
-    # ---- education ----
+    #    education   
     all_education: list[Education] = []
     seen_edu_keys: set[str] = set()
     for rec in records:
@@ -340,7 +340,7 @@ def merge_records(records: list[dict]) -> CanonicalProfile:
                 seen_edu_keys.add(key)
                 all_education.append(edu)
 
-    # ---- overall_confidence ----
+    #    overall_confidence 
     n_sources = len(records)
     populated_fields = sum(1 for v in [full_name, all_emails, all_phones, location, links, headline, skills]
                            if v and (not isinstance(v, list) or len(v) > 0))

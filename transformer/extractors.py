@@ -19,9 +19,9 @@ import pypdf
 from docx import Document
 
 
-# ---------------------------------------------------------------------------
+ 
 # Helpers
-# ---------------------------------------------------------------------------
+ 
 
 def _safe_read_text(path: Path) -> Optional[str]:
     try:
@@ -30,9 +30,9 @@ def _safe_read_text(path: Path) -> Optional[str]:
         return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # 1. Recruiter CSV
-# ---------------------------------------------------------------------------
+ 
 
 def extract_csv(path: Path) -> list[dict]:
     """
@@ -97,9 +97,9 @@ def extract_csv(path: Path) -> list[dict]:
     return records
 
 
-# ---------------------------------------------------------------------------
+ 
 # 2. ATS JSON
-# ---------------------------------------------------------------------------
+ 
 
 _ATS_FIELD_MAP = {
     # ATS key → our key
@@ -254,9 +254,9 @@ def extract_ats_json(path: Path) -> list[dict]:
     return records
 
 
-# ---------------------------------------------------------------------------
+ 
 # 3. Resume PDF / DOCX
-# ---------------------------------------------------------------------------
+ 
 
 def _extract_text_from_pdf(path: Path) -> str:
     try:
@@ -400,9 +400,9 @@ def extract_resume(path: Path) -> list[dict]:
     return [_parse_resume_text(text, source_id)]
 
 
-# ---------------------------------------------------------------------------
+ 
 # 4. GitHub Profile
-# ---------------------------------------------------------------------------
+ 
 
 def extract_github(username_or_url: str) -> list[dict]:
     """
@@ -467,9 +467,9 @@ def extract_github(username_or_url: str) -> list[dict]:
         return []
 
 
-# ---------------------------------------------------------------------------
+ 
 # 5. Recruiter Notes (free text .txt)
-# ---------------------------------------------------------------------------
+ 
 
 _NOTE_PATTERNS = {
     "full_name": [

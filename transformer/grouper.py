@@ -32,7 +32,7 @@ def group_records_by_identity(records: list[dict]) -> list[list[dict]]:
     if n == 0:
         return []
 
-    # --- Step 1: Index all records by high-signal identifiers ---
+    # Step 1: Index all records by high-signal identifiers 
     email_to_indices = defaultdict(list)
     phone_to_indices = defaultdict(list)
     name_to_indices = defaultdict(list)
@@ -57,7 +57,7 @@ def group_records_by_identity(records: list[dict]) -> list[list[dict]]:
             if norm_name:
                 name_to_indices[norm_name].append(idx)
 
-    # --- Step 2: Build adjacency graph (using sets for fast union) ---
+    #  Step 2: Build adjacency graph (using sets for fast union) 
     graph = defaultdict(set)
 
     # Connect records sharing an email
@@ -74,8 +74,7 @@ def group_records_by_identity(records: list[dict]) -> list[list[dict]]:
                 graph[indices[i]].add(indices[j])
                 graph[indices[j]].add(indices[i])
 
-    # --- Step 3: Fallback: Link isolated records by name ---
-    # (Only if they have no email/phone connections yet)
+    #  Step 3: Fallback: Link isolated records by name 
     isolated_nodes = [i for i in range(n) if not graph[i]]
     for idx in isolated_nodes:
         name = records[idx].get("full_name", "")
@@ -87,7 +86,7 @@ def group_records_by_identity(records: list[dict]) -> list[list[dict]]:
                     graph[idx].add(other_idx)
                     graph[other_idx].add(idx)
 
-    # --- Step 4: Traverse graph to find connected components ---
+    # Step 4: Traverse graph to find connected components
     visited = set()
     clusters = []
     

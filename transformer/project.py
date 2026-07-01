@@ -27,9 +27,9 @@ from .schema import CanonicalProfile
 from .normalize import normalize_phone, canonicalize_skill
 
 
-# ---------------------------------------------------------------------------
+ 
 # Path resolver
-# ---------------------------------------------------------------------------
+ 
 
 def _resolve_path(obj: Any, path: str) -> Any:
     """
@@ -75,9 +75,9 @@ def _resolve_path(obj: Any, path: str) -> Any:
     return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # Normalizers applicable at projection time
-# ---------------------------------------------------------------------------
+ 
 
 def _apply_normalize(value: Any, norm: str) -> Any:
     if value is None:
@@ -99,9 +99,9 @@ def _apply_normalize(value: Any, norm: str) -> Any:
     return value
 
 
-# ---------------------------------------------------------------------------
+ 
 # Type coercion
-# ---------------------------------------------------------------------------
+ 
 
 def _coerce(value: Any, type_hint: str) -> Any:
     if value is None:
@@ -124,9 +124,9 @@ def _coerce(value: Any, type_hint: str) -> Any:
     return value
 
 
-# ---------------------------------------------------------------------------
+ 
 # Projection
-# ---------------------------------------------------------------------------
+ 
 
 class ProjectionError(Exception):
     pass
@@ -209,9 +209,9 @@ def _full_output(profile_dict: dict, include_provenance: bool, include_confidenc
     return out
 
 
-# ---------------------------------------------------------------------------
+ 
 # Config loader
-# ---------------------------------------------------------------------------
+ 
 
 def load_config(path: Optional[str]) -> Optional[dict]:
     """Load JSON config from file path, or return None for default output."""
@@ -227,9 +227,9 @@ def load_config(path: Optional[str]) -> Optional[dict]:
         return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # Validate output against requested schema
-# ---------------------------------------------------------------------------
+ 
 
 def validate_output(output: dict, config: Optional[dict]) -> list[str]:
     """Return list of validation errors (empty = valid)."""

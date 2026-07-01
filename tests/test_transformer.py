@@ -25,9 +25,7 @@ from transformer.schema import CanonicalProfile
 from transformer.pipeline import run_pipeline
 
 
-# ==========================================================================
-# 1. Normalizer tests (existing, keep all)
-# ==========================================================================
+# 1. Normalizer tests
 
 class TestNormalizePhone(unittest.TestCase):
     def test_e164_indian_number(self):
@@ -122,9 +120,7 @@ class TestCanonicalizeSkill(unittest.TestCase):
         self.assertEqual(canonicalize_skill("Python"), "Python")
 
 
-# ==========================================================================
-# 2. Extractor tests (existing, keep all)
-# ==========================================================================
+# 2. Extractor tests
 
 class TestCSVExtractor(unittest.TestCase):
     def setUp(self):
@@ -196,10 +192,7 @@ class TestNotesExtractor(unittest.TestCase):
         skills = records[0].get("_raw_skills", [])
         self.assertIn("python", skills)
 
-
-# ==========================================================================
-# 3. Identity Clustering tests (NEW)
-# ==========================================================================
+# 3. Identity Clustering tests
 
 class TestIdentityClustering(unittest.TestCase):
     def test_cluster_by_email(self):
@@ -249,10 +242,7 @@ class TestIdentityClustering(unittest.TestCase):
     def test_empty_input(self):
         self.assertEqual(group_records_by_identity([]), [])
 
-
-# ==========================================================================
-# 4. Dynamic Source Quality tests (NEW)
-# ==========================================================================
+# 4. Dynamic Source Quality tests
 
 class TestDynamicSourceQuality(unittest.TestCase):
     def test_full_record_high_score(self):
@@ -299,9 +289,7 @@ class TestDynamicSourceQuality(unittest.TestCase):
         self.assertGreater(score2, score1)
 
 
-# ==========================================================================
-# 5. Merge tests (updated for dynamic scoring and granular merge)
-# ==========================================================================
+# 5. Merge tests 
 
 class TestMerge(unittest.TestCase):
     def _make_records(self):
@@ -380,7 +368,6 @@ class TestMerge(unittest.TestCase):
         self.assertEqual(profile.emails, [])
         self.assertEqual(profile.phones, [])
 
-    # NEW: Granular experience merge test
     def test_granular_experience_merge(self):
         records = [
             {
@@ -398,15 +385,12 @@ class TestMerge(unittest.TestCase):
         self.assertEqual(len(profile.experience), 1)
         exp = profile.experience[0]
         self.assertEqual(exp.company, "Google")
-        # Should pick more precise dates (YYYY-MM over YYYY)
         self.assertEqual(exp.start, "2020-01")
         self.assertEqual(exp.end, "2022-12")
         self.assertIn("Built things", exp.summary)
 
 
-# ==========================================================================
-# 6. Projection tests (existing, keep all)
-# ==========================================================================
+# 6. Projection tests 
 
 class TestProjection(unittest.TestCase):
     def _make_profile(self) -> CanonicalProfile:
@@ -518,9 +502,7 @@ class TestProjection(unittest.TestCase):
         self.assertTrue(len(errors) > 0 or output.get("full_name") is None)
 
 
-# ==========================================================================
-# 7. Edge case integration tests (updated with new features)
-# ==========================================================================
+# 7. Edge case integration tests 
 
 class TestEdgeCases(unittest.TestCase):
     def test_all_sources_missing_graceful(self):
@@ -566,21 +548,17 @@ class TestEdgeCases(unittest.TestCase):
         self.assertGreaterEqual(profile.overall_confidence, 0.0)
         self.assertLessEqual(profile.overall_confidence, 1.0)
 
-    # NEW: Source Veto test
     def test_source_veto_ignores_specified_types(self):
         result = run_pipeline(
             sources=[
                 "sample_inputs/recruiter_export.csv",
                 "sample_inputs/recruiter_notes_priya.txt",
             ],
-            config_path=None,  # no config → no veto
+            config_path=None,  
             verbose=False,
         )
-        # Without veto, both sources should contribute
         self.assertGreater(len(result["profiles"]), 0)
         
-        # With veto on "notes"
-        # We'll create a temporary config file with ignored_sources
         import tempfile
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
             json.dump({"ignored_sources": ["notes"], "fields": []}, f)
@@ -594,27 +572,22 @@ class TestEdgeCases(unittest.TestCase):
             verbose=False,
         )
         os.unlink(config_path)
-        # Should still produce profiles (CSV is not ignored)
         self.assertGreater(len(result_veto["profiles"]), 0)
 
-    # NEW: Multi-candidate clustering test
     def test_multi_candidate_clustering(self):
-        # CSV has 3 people, but we'll just use a small synthetic list
         records = [
             {"_source_id": "a", "full_name": "Alice", "emails": ["alice@a.com"]},
             {"_source_id": "b", "full_name": "Bob", "emails": ["bob@b.com"]},
-            {"_source_id": "c", "full_name": "Alice", "emails": ["alice@a.com"]},  # same as a
+            {"_source_id": "c", "full_name": "Alice", "emails": ["alice@a.com"]},  
         ]
         clusters = group_records_by_identity(records)
-        self.assertEqual(len(clusters), 2)  # Alice cluster (2) and Bob cluster (1)
+        self.assertEqual(len(clusters), 2) 
         alice_cluster = next(c for c in clusters if len(c) == 2)
         self.assertEqual(alice_cluster[0]["full_name"], "Alice")
         self.assertEqual(alice_cluster[1]["full_name"], "Alice")
 
 
-# ==========================================================================
-# 8. Gold profile comparison (updated with new features)
-# ==========================================================================
+# 8. Gold profile comparison 
 
 class TestGoldProfileComparison(unittest.TestCase):
     """

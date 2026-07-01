@@ -12,9 +12,9 @@ import phonenumbers
 import pycountry
 
 
-# ---------------------------------------------------------------------------
+ 
 # Phone  →  E.164
-# ---------------------------------------------------------------------------
+ 
 
 def normalize_phone(raw: str, default_region: str = "US") -> Optional[str]:
     """Return E.164 or None if unparseable."""
@@ -29,9 +29,9 @@ def normalize_phone(raw: str, default_region: str = "US") -> Optional[str]:
     return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # Date  →  YYYY-MM
-# ---------------------------------------------------------------------------
+ 
 
 _MONTH_MAP = {
     "jan": "01", "feb": "02", "mar": "03", "apr": "04",
@@ -84,9 +84,9 @@ def normalize_date(raw: str) -> Optional[str]:
     return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # Country  →  ISO-3166 alpha-2
-# ---------------------------------------------------------------------------
+ 
 
 def normalize_country(raw: str) -> Optional[str]:
     """Return ISO-3166 alpha-2 ('IN', 'US', …) or None."""
@@ -111,9 +111,9 @@ def normalize_country(raw: str) -> Optional[str]:
     return None
 
 
-# ---------------------------------------------------------------------------
+ 
 # Skill canonicalization
-# ---------------------------------------------------------------------------
+ 
 
 _SKILL_ALIASES: dict[str, str] = {
     # Languages
